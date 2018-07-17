@@ -16,8 +16,9 @@
 
 
             $(document).ready(function(){
+	
                 var encrypt = new JSEncrypt();
-                encrypt.setPublicKey($('#pubkey').val());
+                encrypt.setPublicKey($('#pubkey').val());;
 
                 var decrypt = new JSEncrypt();
                 decrypt.setPrivateKey($('#privkey').val());
@@ -59,29 +60,9 @@
         </script>
     </head>
     <body>
+        <input type="hidden" id="privkey" rows="15" cols="65" value="{{private_key}}"><br/>
 
-        <input type="hidden" id="privkey" rows="15" cols="65" value="-----BEGIN RSA PRIVATE KEY-----
-MIICXAIBAAKBgQDDkEtmj3zZ/bzymnELJ3n/FXvOOt6erfKwxRNsxHLz6BT3cDwA
-F2EJP9VthS7e01RkRJrJIujZd+sQUND/E40YCS4qPUBhCBDGYwXdKalFynFU96Nv
-KfNBrrrkPXfxNnQtkJJfaNpl2fZJqWhhQLuqhVyF2BfvdLP324iL/hOacQIDAQAB
-AoGACv1570qTBqEm1C9vuOPADGDFs2JFjn9SCzMYE1265BAf1YP+KzclIeLveJcq
-eiVAMd5VIIaQtV/y2tjf1eXgYOcvfP83U3Dk51P/0j6YAwNg6/zCHwqnhr1wFwVE
-4Iz6NTploGYPF4gWH1PF9Dc81byKDPdzjoU83aekhAE1HsECQQDOJxKhi7TSbQAT
-RlFiG7uJk20/qWhs+RXsFwaghdoRyFIm00iL245Z/VSAhWXfbXo6f2cJ+LUlgmXR
-VLAnavEZAkEA8tnCjODD079scZaodSrdf1wJqTu5zs0r5t2qOKblCaY2bV75Iq2v
-LCtSliJxq5tGglir32SrNJ1Q8csQeclnGQJAZw8bfk00YXoCbqBZsR1CHN3p4MiV
-Ht1LO1KrinY/9WHax/QaMWjaelxt8S4/Jno5f6MPZOnDzXOp6QNYaOxKiQJBAJ0F
-zjSW9CfK4wyC9INl5vf9g8Wn95lOsi9BblnZF8jobtLDEOWqVdSCYpDuzn6+FJYd
-TWxRRB3uBjOBMDL+1akCQGs8K137mf+0KFj5cWqQPhsqM8OPF9SXb0+FhPvkmKAT
-HLWEdyRmwwtXRWl11ahizb04zpyxfNuNA2dzihwGpz0=
------END RSA PRIVATE KEY-----"><br/>
-    <label for="pubkey">Public Key</label><br/>
-    <input type="hidden"  id="pubkey" rows="15" cols="65" value="-----BEGIN PUBLIC KEY-----
-MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDDkEtmj3zZ/bzymnELJ3n/FXvO
-Ot6erfKwxRNsxHLz6BT3cDwAF2EJP9VthS7e01RkRJrJIujZd+sQUND/E40YCS4q
-PUBhCBDGYwXdKalFynFU96NvKfNBrrrkPXfxNnQtkJJfaNpl2fZJqWhhQLuqhVyF
-2BfvdLP324iL/hOacQIDAQAB
------END PUBLIC KEY-----">
+    <input type="hidden"  id="pubkey" rows="15" cols="65" value="{{public_key}}">
 
 
         <h1>Flask-SocketIO-Chat: {{ room }}</h1>
